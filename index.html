@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crocodile Facts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .fact-display {
+            margin-top: 20px;
+            font-size: 18px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Crocodile Facts</h1>
+        <button id="factButton">Show Random Fact</button>
+        <div id="factDisplay" class="fact-display"></div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const facts = [
+                "Crocodiles are ancient reptiles that have been around for about 200 million years.",
+                "They are found in tropical regions of Africa, Asia, the Americas, and Australia.",
+                "Crocodiles have a powerful bite, with some species having the strongest bite force of any animal.",
+                "They can hold their breath underwater for up to an hour.",
+                "Crocodiles are carnivorous and have a diet that includes fish, birds, mammals, and occasionally smaller crocodiles.",
+                "They have a unique heart structure with four chambers, similar to birds and mammals.",
+                "Crocodiles can live up to 70 years in the wild.",
+                "They communicate with each other through vocalizations, body postures, and chemical signals.",
+                "Crocodiles are excellent swimmers and can reach speeds of up to 20 mph in water.",
+                "They have a special gland in their tongues that excretes excess salt, allowing them to live in saltwater environments."
+            ];
+
+            const factButton = document.getElementById('factButton');
+            const factDisplay = document.getElementById('factDisplay');
+
+            factButton.addEventListener('click', () => {
+                const randomIndex = Math.floor(Math.random() * facts.length);
+                factDisplay.textContent = facts[randomIndex];
+            });
+        });
+    </script>
+</body>
+</html>
